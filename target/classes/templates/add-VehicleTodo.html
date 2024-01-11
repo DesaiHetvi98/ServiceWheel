@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add Authors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+ 
+<body>
+	<div th:insert="fragments/header :: header"></div>
+    <div class="container my-5">
+        <h3>Add Vehicle Task</h3>
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-10">
+                    <form action="#" th:action="@{/add-vehicleTodo}" th:object="${vehicleTodo}" method="post">
+                        <div class="row">
+                            
+                            <div class="form-group col-md-8">
+                                <label for="name" class="col-form-label">Vehicle Name</label>
+                                <input type="text" th:field="*{vehicleName}" class="form-control" id="vehicleName" placeholder="vehicleName" />
+                            </div>
+                            
+                             <div class="form-group col-md-8">
+                                <label for="description" class="col-form-label">issue</label>
+                                <input type="text" th:field="*{issue}" class="form-control" id="issue" placeholder="issue" />
+                            </div>
+
+                            <div class="form-group col-md-8">
+                                <label for="description" class="col-form-label">lastDate</label>
+                                <input type="text" th:field="*{lastDate}" class="form-control" id="lastdate" placeholder="lastDate" />
+                            </div>
+ 
+                            <div class="col-md-6">
+                                <input type="submit" class="btn btn-primary" value=" Submit ">
+                            </div>
+     
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div th:insert="fragments/footer :: footer"></div>
+    
+</body>
+ 
+</html>
